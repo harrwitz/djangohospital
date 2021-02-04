@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Appointments</h1>
+<table class="content-table">
+  <thead>
+    <tr>
+    <th scope="col">Name</th>
+    <th scope="col">age</th>
+    <th scope="col">sex</th>
+    <th scope="col">doctor</th>
+    <th scope="col">appointment date</th>
+    <th scope="col">appointment time</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for apt in appo %}
+  <tr>
+    <td>{{apt.name}}</td>
+    <td>{{apt.age}}</td>
+    <td>{{apt.sex}}</td>
+    <td>{{apt.doctor}}</td>
+    <td>{{apt.appointment_date}}</td>
+    <td>{{apt.appointment_time}}</td>
+    <td><a class="btn btn-sm btn-info" href="{% url 'updateappo' apt.id %}"><i class="far fa-edit"></i></a></td>
+    <td><a class="btn btn-sm btn-danger" href="{% url 'deleteappo' apt.id %}"><i class="far fa-trash-alt"></i></a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

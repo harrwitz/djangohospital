@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Side Navigation Bar</title>
+	<link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<style media="screen">
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+list-style: none;
+text-decoration: none;
+}
+
+body{
+ background-color: #f3f5f9;
+}
+
+.wrapper{
+display: flex;
+position: relative;
+}
+
+.wrapper .sidebar{
+width: 200px;
+height: 100%;
+background: white;
+padding: 30px 0px;
+position: fixed;
+}
+
+.wrapper .sidebar h2{
+margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li{
+padding: 15px;
+border-bottom: 1px solid #bdb8d7;
+border-bottom: 1px solid rgba(0,0,0,0.05);
+border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.wrapper .sidebar ul li a{
+color: #ff6816;
+display: block;
+}
+.wrapper .sidebar ul li a .fas{
+width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+background-color:#ff6816;
+}
+
+.wrapper .sidebar ul li:hover a{
+color: white;
+}
+
+.wrapper .sidebar .social_media{
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+display: block;
+width: 40px;
+background: #594f8d;
+height: 40px;
+line-height: 45px;
+text-align: center;
+margin: 0 5px;
+color: #bdb8d7;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
+.wrapper .main_content{
+width: 100%;
+padding-left: 250px;
+}
+
+.wrapper .main_content .header{
+padding: 20px;
+background: #fff;
+color: #717171;
+border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+margin: 20px;
+color: #717171;
+line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+margin-bottom: 20px;
+}
+.main_content{
+	padding-left: 250px;
+}
+h1{
+  padding-top: 25px ;
+  padding-left: 225px;
+  font-size: 75px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #272727;
+}
+table{
+	  padding-left: 275px;
+		font-family: 'Ubuntu', sans-serif;
+		color: #272727;
+}
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+form{
+	padding-left: 0px;
+	padding-top: 50px;
+}
+	</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <img src="https://1.bp.blogspot.com/-qdyCi7fdD3M/X1XH2PXyxJI/AAAAAAAAayM/vFL7q4N5dswZq9rzb7R_qsVdGgL_A37vwCLcBGAsYHQ/s198/Free_Sample_By_Wix%2B%25285%2529.jpg" alt="">
+        <ul>
+					  <li><a href="/createappo/"><i class="fas fa-plus"></i>createappo</a></li>
+            <li><a href="/"><i class="fas fa-book-medical"></i>Appointments</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="main_content">
+         {% block content %}
+
+				 {% endblock %}
+      </div>
+    </div>
+</div>
+
+</body>
